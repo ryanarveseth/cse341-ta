@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../includes/header.ejs %>
+    <% if (theme == "light") { %>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/light.css" />
+        <% } else { %> <link rel="stylesheet" type="text/css" href="/stylesheets/dark.css" />
+        <% } %>
+</head>
+
+<body>
+<% include ../includes/nav.ejs %>
+<div class="jumbotron text-center">
+    <div class="container">
+        <h1><%= title %></h1>
+        <p>This is the placeholder for Team Activity 05</p>
+    </div>
+</div>
+
+<div class="container">
+    <form method="post" action="/ta05/change-style">
+        <label for="change-style">To Change Style, click button below</label>
+        <button type="submit">Change Page Style</button>
+    </form>
+
+    <!-- <form method="post" action="/ta05/counter">
+        <label for="user">Add User:</label>
+        <input type="text" name="user" id="user">
+        <button type="submit">Send</button>
+    </form> -->
+
+    <form method="post" action="/ta05/counter">
+        <label for="counter">session <%= counter %> </label>
+        <button type="submit">Count</button>
+    </form>
+</div>
+
+
+
+</body>
+</html>
